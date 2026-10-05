@@ -1,16 +1,20 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { sectionPaths } from '../routes.js'
+import AppLink from './AppLink.jsx'
 import Brand from './Brand.jsx'
 
 const links = [
-  ['Servicios', '#servicios'],
-  ['Showreel', '#showreel'],
-  ['Paquetes', '#paquetes'],
-  ['Comparar', '#comparar'],
-  ['Proceso', '#proceso'],
+  ['Servicios', sectionPaths.servicios],
+  ['Showreel', sectionPaths.showreel],
+  ['Paquetes', sectionPaths.paquetes],
+  ['Comparar', sectionPaths.comparar],
+  ['Proceso', sectionPaths.proceso],
 ]
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
 
   function closeMenu() {
     setMenuOpen(false)
@@ -19,9 +23,9 @@ export default function Navbar() {
   return (
     <nav className="bruma-navbar" aria-label="Navegación principal">
       <div className="container navbar-content">
-        <a className="brand-mark" href="#inicio" aria-label="BRUMA, inicio" onClick={closeMenu}>
+        <AppLink className="brand-mark" href="/" aria-label="BRUMA, inicio" onClick={closeMenu}>
           <Brand />
-        </a>
+        </AppLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -36,13 +40,13 @@ export default function Navbar() {
           <ul className="navbar-nav">
             {links.map(([label, href]) => (
               <li key={href}>
-                <a className="nav-link" href={href} onClick={closeMenu}>{label}</a>
+                <AppLink className={`nav-link${pathname === href ? ' active' : ''}`} href={href} aria-current={pathname === href ? 'page' : undefined} onClick={closeMenu}>{label}</AppLink>
               </li>
             ))}
             <li>
-              <a className="btn btn-accent nav-cta" href="#contacto" onClick={closeMenu}>
+              <AppLink className="btn btn-accent nav-cta" href={sectionPaths.contacto} onClick={closeMenu}>
                 Solicitar servicio
-              </a>
+              </AppLink>
             </li>
           </ul>
         </div>

@@ -1,4 +1,5 @@
 import Reveal from './Reveal.jsx'
+import AppLink from './AppLink.jsx'
 
 export default function CallToAction({ eyebrow, title, actions, className }) {
   return (
@@ -6,7 +7,7 @@ export default function CallToAction({ eyebrow, title, actions, className }) {
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       {title && <h2>{title}</h2>}
       {actions.map(({ label, href, variant = 'accent' }) => (
-        <a className={`btn btn-${variant} btn-lg`} href={href} key={href}>{label}</a>
+        <AppLink className={`btn btn-${variant} btn-lg`} href={href} key={href}>{label}</AppLink>
       ))}
     </Reveal>
   )

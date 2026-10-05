@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import CallToAction from './components/CallToAction.jsx'
 import ContactForm from './components/ContactForm.jsx'
 import Footer from './components/Footer.jsx'
@@ -9,7 +10,9 @@ import ProcessStep from './components/ProcessStep.jsx'
 import Reveal from './components/Reveal.jsx'
 import ServiceCard from './components/ServiceCard.jsx'
 import SectionHeading from './components/SectionHeading.jsx'
+import NotFound from './components/NotFound.jsx'
 import { comparisonRows, packageFilters, packages } from './data/packages.js'
+import { appRoutes } from './routes.js'
 import './App.css'
 
 const services = [
@@ -32,9 +35,20 @@ const trustPoints = [
   ['Proceso claro', 'El cliente sabe qué recibe, cuándo y cómo se revisa.'],
 ]
 
-export default function App() {
+function LandingPage() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [selectedPackage, setSelectedPackage] = useState('')
+  const { pathname, key } = useLocation()
+
+  useEffect(() => {
+    const route = appRoutes.find(({ path }) => path === pathname)
+    const frame = window.requestAnimationFrame(() => {
+      const section = document.getElementById(route?.section ?? 'inicio')
+      section?.scrollIntoView({ block: 'start' })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [pathname, key])
 
   return (
     <>
@@ -190,7 +204,7 @@ export default function App() {
               className="final-cta"
               eyebrow="¿Tienes una idea?"
               title="Convirtámosla en contenido."
-              actions={[{ label: 'Trabajemos juntos', href: '#contacto' }]}
+              actions={[{ label: 'Trabajemos juntos', href: '/contacto' }]}
             />
           </div>
         </section>
@@ -198,5 +212,16 @@ export default function App() {
 
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+      {appRoutes.map(({ path }) => (
+        <Route key={path} path={path} element={<LandingPage />} />
+      ))}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }

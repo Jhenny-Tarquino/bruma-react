@@ -1,5 +1,6 @@
 import CallToAction from './CallToAction.jsx'
 import Reveal from './Reveal.jsx'
+import { sectionPaths } from '../routes.js'
 
 export default function HeroSection() {
   return (
@@ -14,8 +15,8 @@ export default function HeroSection() {
             <CallToAction
               className="hero-actions"
               actions={[
-                { label: 'Ver paquetes', href: '#paquetes' },
-                { label: 'Ver cómo trabajamos', href: '#proceso', variant: 'ghost' },
+                { label: 'Ver paquetes', href: sectionPaths.paquetes },
+                { label: 'Ver cómo trabajamos', href: sectionPaths.proceso, variant: 'ghost' },
               ]}
             />
             <Reveal className="hero-stats" aria-label="Resumen de beneficios">

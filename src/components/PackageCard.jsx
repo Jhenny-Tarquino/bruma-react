@@ -1,4 +1,6 @@
 import Reveal from './Reveal.jsx'
+import AppLink from './AppLink.jsx'
+import { sectionPaths } from '../routes.js'
 
 export default function PackageCard({ packageInfo, onSelect }) {
   const { name, tag, description, price, summary, features, action, featured } = packageInfo
@@ -18,13 +20,13 @@ export default function PackageCard({ packageInfo, onSelect }) {
         <ul className="feature-list">
           {features.map((feature) => <li key={feature}>{feature}</li>)}
         </ul>
-        <a
+        <AppLink
           className={`btn${featured ? ' btn-accent' : ' btn-package'} btn-package`}
-          href="#contacto"
+          href={sectionPaths.contacto}
           onClick={() => onSelect(name)}
         >
           {action}
-        </a>
+        </AppLink>
     </Reveal>
   )
 }

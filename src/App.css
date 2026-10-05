@@ -449,6 +449,8 @@ textarea.form-control { resize: vertical; }
 
 .section-heading.text-start { text-align: left; }
 
+.not-found-action { text-align: center; }
+
 .section-heading h2,
 .contact-panel h2 {
   font-size: clamp(2rem, 4vw, 3.7rem);
