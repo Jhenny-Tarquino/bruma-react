@@ -1,0 +1,76 @@
+export const packages = [
+  {
+    id: 'inicio',
+    category: 'inicio',
+    tag: 'Para empezar',
+    name: 'Bruma Base',
+    description: 'Ideal para emprendimientos que necesitan verse activos y profesionales sin una producción grande.',
+    price: '180',
+    summary: ['4 reels', '2h producción', '5 días', '1 ajuste'],
+    features: [
+      '1 sesión de grabación de 2 horas',
+      '4 reels editados en formato vertical',
+      '8 fotografías editadas',
+      'Subtítulos y música libre de uso',
+      'Entrega en 5 días hábiles',
+      '1 ronda de ajustes incluida',
+    ],
+    action: 'Elegir Base',
+  },
+  {
+    id: 'crecer',
+    category: 'crecer',
+    tag: 'Para crecer',
+    name: 'Bruma Impulso',
+    description: 'Para marcas que quieren publicar con constancia y tener material variado durante el mes.',
+    price: '320',
+    summary: ['8 reels', '4h producción', '7 días', '2 ajustes'],
+    features: [
+      '1 sesión de grabación de 4 horas',
+      '8 reels editados en formato vertical',
+      '15 fotografías editadas',
+      'Guion creativo para cada video',
+      '2 rondas de ajustes incluidas',
+      'Entrega en 7 días hábiles',
+    ],
+    action: 'Elegir Impulso',
+    featured: true,
+  },
+  {
+    id: 'marca',
+    category: 'marca',
+    tag: 'Para lanzar',
+    name: 'Bruma Pro',
+    description: 'Para campañas, lanzamientos o marcas que necesitan una producción más completa y cuidada.',
+    price: '560',
+    summary: ['12 reels', '6h producción', 'Según alcance', '3 ajustes'],
+    features: [
+      '1 jornada de producción de 6 horas',
+      '12 reels editados en formato vertical',
+      '25 fotografías editadas',
+      'Dirección creativa y moodboard',
+      'Video resumen horizontal de marca',
+      '3 rondas de ajustes incluidas',
+      'Entrega final según alcance y ajustes',
+    ],
+    action: 'Elegir Pro',
+  },
+]
+
+export const packageFilters = [
+  { id: 'all', label: 'Todos' },
+  { id: 'inicio', label: 'Presupuesto bajo' },
+  { id: 'crecer', label: 'Más contenido' },
+  { id: 'marca', label: 'Producción completa' },
+]
+
+export const comparisonRows = [
+  ['Precio', '$180', '$320', '$560'],
+  ['Tiempo de producción', '2 horas', '4 horas', '6 horas'],
+  ['Reels editados', '4', '8', '12'],
+  ['Fotos editadas', '8', '15', '25'],
+  ['Estrategia creativa', 'Básica', 'Guiones por video', 'Moodboard + dirección'],
+  ['Ajustes', '1 ronda', '2 rondas', '3 rondas'],
+  ['Entrega final', '5 días hábiles', '7 días hábiles', 'Según alcance'],
+  ['Primer corte', '48h', '48h', '48h'],
+]
