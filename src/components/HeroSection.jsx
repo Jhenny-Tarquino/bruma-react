@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
           <div className="col-lg-6">
             <Reveal className="hero-visual">
-              <img src="/bruma-studio.svg" alt="Set audiovisual moderno con cámara, luz y piezas de contenido para redes" />
+              <img src={`${import.meta.env.BASE_URL}bruma-studio.svg`} alt="Set audiovisual moderno con cámara, luz y piezas de contenido para redes" />
               <div className="floating-card floating-card-top"><span>Reels</span><strong>8 piezas</strong></div>
               <div className="floating-card floating-card-bottom"><span>Paquetes desde</span><strong>$180</strong></div>
             </Reveal>

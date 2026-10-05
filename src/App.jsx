@@ -48,7 +48,7 @@ export default function App() {
               Un bloque visual para presentar el video principal de la agencia, con ritmo, estilo y ejemplos reales cuando el material esté listo.
             </SectionHeading>
             <Reveal className="showreel-frame" aria-label="Contenedor preparado para video showreel">
-              <video className="showreel-video" autoPlay muted loop playsInline preload="metadata" poster="/bruma-studio.svg">
+              <video className="showreel-video" autoPlay muted loop playsInline preload="metadata" poster={`${import.meta.env.BASE_URL}bruma-studio.svg`}>
                 <source src="https://videos.pexels.com/video-files/34149137/14478811_1080_1920_30fps.mp4" type="video/mp4" />
                 Tu navegador no soporta video HTML5.
               </video>
