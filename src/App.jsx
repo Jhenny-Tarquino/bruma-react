@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import AppLink from './components/AppLink.jsx'
 import CallToAction from './components/CallToAction.jsx'
-import ContactForm from './components/ContactForm.jsx'
 import Footer from './components/Footer.jsx'
 import HeroSection from './components/HeroSection.jsx'
 import Navbar from './components/Navbar.jsx'
@@ -37,7 +37,6 @@ const trustPoints = [
 
 function LandingPage() {
   const [activeFilter, setActiveFilter] = useState('all')
-  const [selectedPackage, setSelectedPackage] = useState('')
   const { pathname, key } = useLocation()
 
   useEffect(() => {
@@ -126,7 +125,7 @@ function LandingPage() {
             <div className="row g-4 align-items-stretch">
               {packages.map((packageInfo) => (
                   <div className={`package-item col-lg-4${activeFilter !== 'all' && activeFilter !== packageInfo.category ? ' is-hidden' : ''}`} data-category={packageInfo.category} key={packageInfo.id}>
-                  <PackageCard packageInfo={packageInfo} onSelect={setSelectedPackage} />
+                  <PackageCard packageInfo={packageInfo} />
                 </div>
               ))}
             </div>
@@ -193,7 +192,10 @@ function LandingPage() {
                 <p>Cuéntanos qué vendes, qué redes usas y qué servicio necesitas. Te responderemos con disponibilidad, paquete sugerido y siguientes pasos.</p>
                 <div className="contact-info"><span>Email: reemplazar por correo real</span><span>WhatsApp: reemplazar por número real</span></div>
               </div>
-              <ContactForm selectedPackage={selectedPackage} onPackageChange={setSelectedPackage} />
+              <div className="request-form-link">
+                <p>Completa el formulario en la pagina de solicitudes y cuentanos los detalles de tu proyecto.</p>
+                <AppLink className="btn btn-accent btn-lg" href={`${import.meta.env.BASE_URL}solicitar-servicio.html`}>Ir al formulario</AppLink>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -204,7 +206,7 @@ function LandingPage() {
               className="final-cta"
               eyebrow="¿Tienes una idea?"
               title="Convirtámosla en contenido."
-              actions={[{ label: 'Trabajemos juntos', href: '/contacto' }]}
+              actions={[{ label: 'Trabajemos juntos', href: `${import.meta.env.BASE_URL}solicitar-servicio.html` }]}
             />
           </div>
         </section>

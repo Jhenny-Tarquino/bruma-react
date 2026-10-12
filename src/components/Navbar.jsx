@@ -44,7 +44,7 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <AppLink className="btn btn-accent nav-cta" href={sectionPaths.contacto} onClick={closeMenu}>
+              <AppLink className="btn btn-accent nav-cta" href={`${import.meta.env.BASE_URL}solicitar-servicio.html`} onClick={closeMenu}>
                 Solicitar servicio
               </AppLink>
             </li>

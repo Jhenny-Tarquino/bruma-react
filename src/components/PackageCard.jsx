@@ -1,8 +1,7 @@
 import Reveal from './Reveal.jsx'
 import AppLink from './AppLink.jsx'
-import { sectionPaths } from '../routes.js'
 
-export default function PackageCard({ packageInfo, onSelect }) {
+export default function PackageCard({ packageInfo }) {
   const { name, tag, description, price, summary, features, action, featured } = packageInfo
 
   return (
@@ -22,8 +21,7 @@ export default function PackageCard({ packageInfo, onSelect }) {
         </ul>
         <AppLink
           className={`btn${featured ? ' btn-accent' : ' btn-package'} btn-package`}
-          href={sectionPaths.contacto}
-          onClick={() => onSelect(name)}
+          href={`${import.meta.env.BASE_URL}solicitar-servicio.html?package=${encodeURIComponent(name)}`}
         >
           {action}
         </AppLink>

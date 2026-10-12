@@ -6,6 +6,7 @@ export default function AppLink({ href, target, download, ...props }) {
   const preserveBrowserNavigation =
     externalHref.test(href) ||
     !href?.startsWith('/') ||
+    href?.includes('.html') ||
     download !== undefined ||
     (target !== undefined && target !== '_self')
 

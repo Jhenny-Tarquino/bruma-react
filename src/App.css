@@ -1242,3 +1242,37 @@ textarea.form-control { resize: vertical; }
     font-size: 2.85rem;
   }
 }
+
+.contact-panel h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.request-page-section {
+  min-height: calc(100vh - 110px);
+  padding-top: 150px;
+}
+
+.request-form-link {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 12px;
+}
+
+.request-form-link p { margin: 0; }
+
+.request-back-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.request-back-link:hover { color: var(--text); }
+
+@media (max-width: 767.98px) {
+  .request-page-section { padding-top: 120px; }
+}

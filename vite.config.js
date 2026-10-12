@@ -25,4 +25,12 @@ function githubPagesSpaFallback() {
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/bruma-react/' : '/',
   plugins: [react(), githubPagesSpaFallback()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        requestService: resolve(import.meta.dirname, 'solicitar-servicio.html'),
+      },
+    },
+  },
 }))

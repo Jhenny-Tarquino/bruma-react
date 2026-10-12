@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="footer-links">
             <AppLink href={sectionPaths.servicios}>Servicios</AppLink>
             <AppLink href={sectionPaths.paquetes}>Paquetes</AppLink>
-            <AppLink href={sectionPaths.contacto}>Contacto</AppLink>
+            <AppLink href={`${import.meta.env.BASE_URL}solicitar-servicio.html`}>Contacto</AppLink>
           </div>
         </div>
       </div>
