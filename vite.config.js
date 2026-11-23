@@ -12,7 +12,7 @@ function githubPagesSpaFallback() {
     configResolved(config) {
       outputDirectory = resolve(config.root, config.build.outDir)
     },
-    async closeBundle() {
+    async writeBundle() {
       await copyFile(
         resolve(outputDirectory, 'index.html'),
         resolve(outputDirectory, '404.html'),

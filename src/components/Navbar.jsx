@@ -44,6 +44,11 @@ export default function Navbar() {
               </li>
             ))}
             <li>
+              <AppLink className="nav-link" href={`${import.meta.env.BASE_URL}solicitar-servicio.html?mode=login`} onClick={closeMenu}>
+                Iniciar sesión
+              </AppLink>
+            </li>
+            <li>
               <AppLink className="btn btn-accent nav-cta" href={`${import.meta.env.BASE_URL}solicitar-servicio.html`} onClick={closeMenu}>
                 Solicitar servicio
               </AppLink>
