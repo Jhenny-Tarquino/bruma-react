@@ -833,42 +833,43 @@ textarea.form-control { resize: vertical; }
 .comparison-table {
   min-width: 760px;
   margin: 0;
-  color: #f7f7fb;
-  background: #11131a;
-  font-size: 1rem;
+  color: #111827 !important;
+  background: #ffffff !important;
+  color-scheme: light;
+  font-size: 1.05rem;
   line-height: 1.6;
 }
 
 .comparison-table th,
 .comparison-table td {
   padding: 18px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid #aeb6c2;
   vertical-align: middle;
 }
 
 .comparison-table thead th {
-  color: #07100e;
-  background: var(--accent);
-  border-color: rgba(7, 16, 14, 0.28);
+  color: #07100e !important;
+  background: #21e6c1 !important;
+  border-color: #087b68;
   font-weight: 800;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
 }
 
 .comparison-table tbody th {
   min-width: 180px;
-  color: #f7f7fb;
-  background-color: #20242e;
+  color: #111827 !important;
+  background-color: #e5e7eb !important;
   font-weight: 800;
 }
 
 .comparison-table tbody td {
-  color: #e5e8f0;
-  background-color: #141720;
+  color: #111827 !important;
+  background-color: #ffffff !important;
   font-weight: 600;
 }
 
 .comparison-table tbody tr:nth-child(even) td {
-  background-color: #1a1e28;
+  background-color: #f3f4f6 !important;
 }
 
 .delivery-note {
