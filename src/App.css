@@ -833,9 +833,9 @@ textarea.form-control { resize: vertical; }
 .comparison-table {
   min-width: 760px;
   margin: 0;
-  color: #111827 !important;
-  background: #ffffff !important;
-  color-scheme: light;
+  color: #ffffff !important;
+  background: #11131a !important;
+  color-scheme: dark;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -843,33 +843,33 @@ textarea.form-control { resize: vertical; }
 .comparison-table th,
 .comparison-table td {
   padding: 18px 20px;
-  border: 1px solid #aeb6c2;
+  border: 1px solid #454b58;
   vertical-align: middle;
 }
 
 .comparison-table thead th {
-  color: #07100e !important;
-  background: #21e6c1 !important;
-  border-color: #087b68;
+  color: #ffffff !important;
+  background: #07584f !important;
+  border-color: #258f7f;
   font-weight: 800;
   font-size: 1.05rem;
 }
 
 .comparison-table tbody th {
   min-width: 180px;
-  color: #111827 !important;
-  background-color: #e5e7eb !important;
+  color: #ffffff !important;
+  background-color: #252a35 !important;
   font-weight: 800;
 }
 
 .comparison-table tbody td {
-  color: #111827 !important;
-  background-color: #ffffff !important;
+  color: #ffffff !important;
+  background-color: #141720 !important;
   font-weight: 600;
 }
 
 .comparison-table tbody tr:nth-child(even) td {
-  background-color: #f3f4f6 !important;
+  background-color: #1c212b !important;
 }
 
 .delivery-note {
